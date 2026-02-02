@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cart – Gravis Safety Footwear</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="site-header"></header>
+    <div class="logo">Gravis Safety Footwear</div>
+    <div class="nav-toggle" onclick="toggleNav()">✖</div>
+    <nav id="nav-menu"> 
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About Us</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="blog.html">Blog</a>
+      <a href="cart.html">🛒 Cart</a>
+    </nav>
+    <div class="cta">
+      <button class="glow-btn" onclick="shopNow()">Shop Now</button>
+      <button class="glow-btn" onclick="requestQuote()">Request Quote</button>
+    </div>
+  </header>
+  <section class="page-bg section-glow">
+    <div class="section-container"> 
+      <h1>Your Cart</h1>
+      <div id="cart-items"></div>
+      <h2 id="cart-total">Total: R0</h2>
+      <button class="glow-btn" onclick="openCheckout()">Pay via Card</button>
+    </div>
+  </section>
+
+  <div id="checkout-modal" class="modal">
+    <div class="modal-content glow-card">
+      <span class="close" onclick="closeCheckout()">&times;</span>
+        <h1>Checkout</h1>
+      <h2>Secure Payment</h2>
+      <form id="checkout-form">
+        <input type="text" placeholder="Cardholder Name" required/>
+        <input type="text" placeholder="Card Number" maxlength="16" required/>
+        <div class="card-details">
+          <input type="text" placeholder="MM/YY" maxlength="5" required/>
+          <input type="text" placeholder="CVV" maxlength="3" required/>
+        </div>
+        <button type="submit" class="glow-btn">Confirm Payment</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>© 2026 Gravis Safety Footwear</footer>
+  <button id="back-to-top" class="glow-btn">↑ Back to Top</button>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Products – Gravis Safety Footwear</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="site-header"> </header>
+    <div class="logo">Gravis Safety Footwear</div>
+    <div class="nav-toggle" onclick="toggleNav()">✖</div>
+    <nav id="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About Us</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="blog.html">Blog</a>
+      <a href="cart.html">🛒 Cart</a>
+    </nav>
+    <div class="cta">
+      <button class="glow-btn" onclick="shopNow()">Shop Now</button>
+      <button class="glow-btn" onclick="requestQuote()">Request Quote</button>
+    </div>
+  </header>
+
+  <section id="products" class="page-bg section-glow">
+    <div class="section-container">
+      <h1>Our Products</h1>
+      <div class="product-grid">
+        <div class="product-card glow-card">
+          <img src="assets/images/boot.jpg" alt="Winter Safety Boot"/>
+          <h3>Winter Safety Boot</h3>
+          <span class="price">R950 – R1,200</span>
+          <button class="glow-btn" onclick="addToCart('Winter Safety Boot', 950)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2026 Gravis Safety Footwear</footer>
+  <button id="back-to-top" class="glow-btn">↑ Back to Top</button>
+  <script src="script.js"></script>
+</body>
+</html>
