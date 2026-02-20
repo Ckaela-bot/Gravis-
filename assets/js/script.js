@@ -1,11 +1,30 @@
 // =======================
+// SIZE SELECTION
+// =======================
+function selectSize(button) {
+  const sizeOptions = button.parentElement.querySelectorAll('.size-option');
+  sizeOptions.forEach(btn => btn.classList.remove('selected'));
+  button.classList.add('selected');
+}
+
+// =======================
 // CART LOGIC
 // =======================
 let cart = [];
 
 function addToCart(productName, price) {
-  cart.push({ name: productName, price: price });
-  showNotification(`✓ ${productName} added to cart!`);
+  // Check if a size was selected
+  const sizeButton = event.target.parentElement.parentElement.querySelector('.size-option.selected');
+  const selectedSize = sizeButton ? `UK ${sizeButton.textContent}` : 'No size selected';
+  
+  const cartItem = {
+    name: productName,
+    price: price,
+    size: selectedSize
+  };
+  
+  cart.push(cartItem);
+  showNotification(`✓ ${productName} (${selectedSize}) added to cart!`);
   updateCartDisplay();
   // Auto-show cart after 2 seconds
   setTimeout(() => {
@@ -30,7 +49,8 @@ function updateCartDisplay() {
     cartItemsDiv.innerHTML = "";
     let total = 0;
     cart.forEach((item, index) => {
-      cartItemsDiv.innerHTML += `<div class="cart-item"><p>🛒 ${item.name} – R${item.price}</p><button class="remove-btn" onclick="removeFromCart(${index})">Remove</button></div>`;
+      const sizeInfo = item.size ? ` - ${item.size}` : '';
+      cartItemsDiv.innerHTML += `<div class="cart-item"><p>🛒 ${item.name}${sizeInfo} – R${item.price}</p><button class="remove-btn" onclick="removeFromCart(${index})">Remove</button></div>`;
       total += item.price;
     });
     cartTotalDiv.textContent = `Total: R${total}`;
