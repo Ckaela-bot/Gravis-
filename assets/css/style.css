@@ -626,6 +626,9 @@ footer {
     border-top: 2px solid #1B5E20;
     gap: 8px;
   }
+  #nav-menu.active {
+    display: flex;
+  }
   #nav-menu a { 
     margin: 5px 0; 
     color: #2c3e50;
