@@ -4,11 +4,14 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact – Gravis Safety Footwear</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
 </head>
 <body>
-  <header class="site-header"></header>
-    <div class="logo">Gravis Safety Footwear</div>
+  <header class="site-header">
+    <div class="header-left">
+      <div class="logo">Gravis Safety Footwear</div>
+      <div class="tagline">Premium Protection, Professional Pride</div>
+    </div>
     <div class="nav-toggle" onclick="toggleNav()">✖</div>
     <nav id="nav-menu">
       <a href="index.html">Home</a>
@@ -28,17 +31,22 @@
   <section class="page-bg section-glow">
     <div class="section-container">
       <h1>Contact Us</h1>
+      <div style="text-align: center; margin-bottom: 30px;">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" alt="Customer Support Team" style="max-width: 500px; width: 100%; border-radius: 12px; box-shadow: 0 8px 25px rgba(27,94,32,0.2);"/>
+      </div>
       <form class="contact-form glow-form">
-        <input type="text" placeholder="Name" required/>
-        <input type="email" placeholder="Email" required/>
-        <textarea placeholder="Message" required></textarea>
+        <h2 style="color: #1B5E20; margin-top: 0;">Get in Touch</h2>
+        <input type="text" placeholder="Your Name" required/>
+        <input type="email" placeholder="Your Email" required/>
+        <input type="text" placeholder="Subject" required/>
+        <textarea placeholder="Your Message" required style="resize: vertical; min-height: 150px;"></textarea>
         <button type="submit" class="glow-btn">Send Message</button>
       </form>
     </div>
   </section>
 
-  <footer>© 2026 Gravis Safety Footwear</footer>
+  <footer>© 2024 Gravis Safety Footwear</footer>
   <button id="back-to-top" class="glow-btn">↑ Back to Top</button>
-  <script src="script.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>

@@ -4,11 +4,14 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Products – Gravis Safety Footwear</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
 </head>
 <body>
-  <header class="site-header"> </header>
-    <div class="logo">Gravis Safety Footwear</div>
+  <header class="site-header">
+    <div class="header-left">
+      <div class="logo">Gravis Safety Footwear</div>
+      <div class="tagline">Premium Protection, Professional Pride</div>
+    </div>
     <div class="nav-toggle" onclick="toggleNav()">✖</div>
     <nav id="nav-menu">
       <a href="index.html">Home</a>
@@ -30,17 +33,35 @@
       <h1>Our Products</h1>
       <div class="product-grid">
         <div class="product-card glow-card">
-          <img src="assets/images/boot.jpg" alt="Winter Safety Boot"/>
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80" alt="Winter Safety Boot"/>
           <h3>Winter Safety Boot</h3>
           <span class="price">R950 – R1,200</span>
           <button class="glow-btn" onclick="addToCart('Winter Safety Boot', 950)">Add to Cart</button>
+        </div>
+        <div class="product-card glow-card">
+          <img src="https://images.unsplash.com/photo-1543163521-9a539c45dd15?w=500&q=80" alt="Steel Toe Safety Boot"/>
+          <h3>Steel Toe Safety Boot</h3>
+          <span class="price">R1,100 – R1,400</span>
+          <button class="glow-btn" onclick="addToCart('Steel Toe Safety Boot', 1100)">Add to Cart</button>
+        </div>
+        <div class="product-card glow-card">
+          <img src="https://images.unsplash.com/photo-1552062407-5585ab34d3d0?w=500&q=80" alt="Professional Work Boot"/>
+          <h3>Professional Work Boot</h3>
+          <span class="price">R850 – R1,050</span>
+          <button class="glow-btn" onclick="addToCart('Professional Work Boot', 850)">Add to Cart</button>
+        </div>
+        <div class="product-card glow-card">
+          <img src="https://images.unsplash.com/photo-1537048191336-612213a8f953?w=500&q=80" alt="Heavy Duty Industrial Boot"/>
+          <h3>Heavy Duty Industrial Boot</h3>
+          <span class="price">R1,300 – R1,600</span>
+          <button class="glow-btn" onclick="addToCart('Heavy Duty Industrial Boot', 1300)">Add to Cart</button>
         </div>
       </div>
     </div>
   </section>
 
-  <footer>© 2026 Gravis Safety Footwear</footer>
+  <footer>© 2024 Gravis Safety Footwear</footer>
   <button id="back-to-top" class="glow-btn">↑ Back to Top</button>
-  <script src="script.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>

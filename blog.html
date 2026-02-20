@@ -4,14 +4,50 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Blog – Gravis Safety Footwear</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
 </head>
 <body>
-  <header class="site-header"></header>
+  <header class="site-header">
+    <div class="logo">Gravis Safety Footwear</div>
+    <div class="nav-toggle" onclick="toggleNav()">✖</div>
+    <nav id="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About Us</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="blog.html">Blog</a>
+      <a href="cart.html">🛒 Cart</a>
+    </nav>
+    <div class="cta">
+      <button class="glow-btn" onclick="shopNow()">Shop Now</button>
+      <button class="glow-btn" onclick="requestQuote()">Request Quote</button>
+    </div>
+  </header>
 
   <section class="page-bg section-glow">
     <div class="section-container">
       <h1>Latest News & Updates</h1>
+      <div class="blog-grid">
+        <div class="blog-card">
+          <img src="https://images.unsplash.com/photo-1552062407-5585ab34d3d0?w=500&q=80" alt="Safety Tips"/>
+          <h3>Top 5 Safety Tips for Construction Workers</h3>
+          <p>Learn about the essential safety practices that can prevent workplace injuries and protect your team.</p>
+          <button class="glow-btn">Read More</button>
+        </div>
+        <div class="blog-card">
+          <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500&q=80" alt="Product Launch"/>
+          <h3>Introducing Our Latest Safety Boot Collection</h3>
+          <p>Discover the new innovative features and enhanced comfort in our latest product line designed for professionals.</p>
+          <button class="glow-btn">Read More</button>
+        </div>
+        <div class="blog-card">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&q=80" alt="Industry Trends"/>
+          <h3>Industry Trends in Workplace Safety Equipment</h3>
+          <p>Explore how modern technology is transforming the way companies approach worker safety and protection.</p>
+          <button class="glow-btn">Read More</button>
+        </div>
+      </div>
       <div class="newsletter glow-form">
         <h2>Join the Gravis Community</h2>
         <p>Subscribe to our newsletter for the latest updates on products, safety tips, and exclusive offers.</p>
@@ -23,8 +59,8 @@
     </div>
   </section>
 
-  <footer>© 2026 Gravis Safety Footwear</footer>
+  <footer>© 2024 Gravis Safety Footwear</footer>
   <button id="back-to-top" class="glow-btn">↑ Back to Top</button>
-  <script src="script.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>

@@ -5,8 +5,22 @@ let cart = [];
 
 function addToCart(productName, price) {
   cart.push({ name: productName, price: price });
-  alert(`${productName} added to cart!`);
+  showNotification(`✓ ${productName} added to cart!`);
   updateCartDisplay();
+  // Auto-show cart after 2 seconds
+  setTimeout(() => {
+    if (confirm(`${productName} added! View your cart?`)) {
+      window.location.href = "cart.html";
+    }
+  }, 1500);
+}
+
+function showNotification(message) {
+  const notification = document.createElement('div');
+  notification.className = 'notification';
+  notification.textContent = message;
+  document.body.appendChild(notification);
+  setTimeout(() => notification.remove(), 3000);
 }
 
 function updateCartDisplay() {
@@ -15,13 +29,19 @@ function updateCartDisplay() {
   if (cartItemsDiv && cartTotalDiv) {
     cartItemsDiv.innerHTML = "";
     let total = 0;
-    cart.forEach(item => {
-      cartItemsDiv.innerHTML += `<p>🛒 ${item.name} – R${item.price}</p>`;
+    cart.forEach((item, index) => {
+      cartItemsDiv.innerHTML += `<div class="cart-item"><p>🛒 ${item.name} – R${item.price}</p><button class="remove-btn" onclick="removeFromCart(${index})">Remove</button></div>`;
       total += item.price;
     });
     cartTotalDiv.textContent = `Total: R${total}`;
   }
 }
+
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  updateCartDisplay();
+}
+
 
 // =======================
 // NAVIGATION TOGGLE
@@ -70,7 +90,14 @@ document.addEventListener("DOMContentLoaded", () => {
   faqButtons.forEach(button => {
     button.addEventListener("click", () => {
       const answer = button.nextElementSibling;
-      answer.style.display = answer.style.display === "block" ? "none" : "block";
+      // Close other open FAQs
+      document.querySelectorAll(".faq-answer.active").forEach(otherAnswer => {
+        if (otherAnswer !== answer) {
+          otherAnswer.classList.remove("active");
+        }
+      });
+      // Toggle current FAQ
+      answer.classList.toggle("active");
     });
   });
 });
