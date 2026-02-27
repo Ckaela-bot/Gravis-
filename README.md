@@ -9,7 +9,8 @@ Alligator Safety Boots is a fully functional static website built with HTML5, CS
 - **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
 - **Professional UI**: Clean white background with green accent colors
 - **E-Commerce Functionality**: Shopping cart system with product management, wishlist support
-- **Interactive Elements**: Dynamic FAQ accordion, product filtering, checkout modal, theme toggle with dark mode
+- **Interactive Elements**: Dynamic FAQ accordion, product filtering, checkout modal, theme toggle with dark mode (dark theme is default)
+- **Media**: Embedded brand video introducing Alligator Safety Boots
 - **Optimized Performance**: Lightweight codebase with fast load times
 - **SEO Ready**: Proper HTML structure with semantic markup
 
@@ -39,6 +40,7 @@ Alligator-/
 
 1. **Home (index.html)** - Hero section with product showcase and CTA buttons
 2. **Products (products.html)** - Product grid with 4 safety boot options (each item can be added to a wishlist)
+3. **Brand Video (index.html)** - Introductory video explaining the Alligator story
 3. **About (about.html)** - Company story, founder info, mission & vision
 4. **FAQ (faq.html)** - 5 interactive FAQ items with accordion functionality
 5. **Blog (blog.html)** - News and updates with blog card grid
@@ -135,7 +137,7 @@ This project is proprietary and confidential. All rights reserved to Alligator S
 
 ## Future Enhancements
 
-Some unique feature ideas you might explore next:
+Some unique feature ideas you might explore next (video ideas included):
 
 - **User Accounts & Login**: Save carts/wishlists across sessions, enable order history.
 - **Product Reviews & Ratings**: Allow customers to leave feedback with stars and comments.

@@ -13,6 +13,7 @@
 ### Code Quality
 - [x] All HTML files reference correct asset paths
 - [x] Full "Alligator Safety Boots" branding restored across all pages
+- [x] Header restyled with sticky backdrop blur and animated logo
 - [x] Header changed from sticky to scrollable
 - [x] Responsive design verified
 - [x] All images use external CDN (Unsplash)
@@ -22,7 +23,8 @@
 - [x] Shopping cart working correctly
 - [x] Add to cart button functional with notifications
 - [x] Wishlist button with notification
-- [x] Dark mode / theme toggle implemented
+- [x] Dark mode / theme toggle implemented (dark theme default)
+- [x] Brand introduction video embedded on home page
 - [x] Checkout modal operational
 - [x] FAQ accordion interactive
 - [x] Contact form styled correctly
