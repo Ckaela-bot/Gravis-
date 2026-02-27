@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gravis Safety Footwear – Pre‑Order</title>
+  <title>Alligator Safety Boots – Pre‑Order</title>
   <link rel="stylesheet" href="assets/css/style.css"/>
 </head>
 <body>
   <!-- Header -->
   <header class="site-header">
     <div class="header-left">
-      <div class="logo">Gravis Safety Footwear</div>
+      <div class="logo">Alligator Safety Boots</div>
       <div class="tagline">Premium Protection, Professional Pride</div>
     </div>
     <div class="nav-toggle" onclick="toggleNav()">✖</div>
@@ -26,19 +26,20 @@
     <div class="cta">
       <button class="glow-btn" onclick="shopNow()">Shop Now</button>
       <button class="glow-btn" onclick="requestQuote()">Request Quote</button>
+      <button id="theme-toggle" class="glow-btn" onclick="toggleTheme()">🌙 Dark</button>
     </div>
   </header>
 
   <!-- Hero -->
   <section class="page-bg section-glow" id="hero">
     <div class="section-container">
-      <h1>Gravis builds legacy — from site to course</h1>
+      <h1>Alligator builds legacy — from site to course</h1>
       <p>Pre‑order our first flagship safety boots today and be part of the launch.</p>
-      <button class="glow-btn" onclick="addToCart('Winter Safety Boot Pre‑Order', 950)">
+      <button class="glow-btn" onclick="addToCart(event,'Winter Safety Boot Pre‑Order', 950)">
         Pre‑Order Now
       </button>
       <div class="boot-image">
-        <img src="https://images.unsplash.com/photo-1606107557529-da4dd22537cd?w=600&q=80" alt="Gravis Safety Boot - Premium Protection"/>
+        <img src="https://images.unsplash.com/photo-1606107557529-da4dd22537cd?w=600&q=80" alt="Alligator Safety Boot - Premium Protection" onerror="this.src='https://via.placeholder.com/600x400?text=Image+Unavailable'"/>
       </div>
     </div>
   </section>
@@ -46,17 +47,17 @@
   <!-- Product gallery -->
   <section class="product-gallery">
     <div class="product">
-      <img src="https://images.unsplash.com/photo-1592643935505-5a52e1994189?w=500&q=80" alt="Urban Shield Top Boot">
+      <img src="https://images.unsplash.com/photo-1592643935505-5a52e1994189?w=500&q=80" alt="Urban Shield Top Boot" onerror="this.src='https://via.placeholder.com/500x300?text=Image+Unavailable'">
       <h2>Urban Shield Top</h2>
       <p>Durable high-top safety boot with sleek design and rugged sole.</p>
     </div>
     <div class="product">
-      <img src="https://images.unsplash.com/photo-1552062407-5585ab34d3d0?w=500&q=80" alt="Gravis Safety Boot">
-      <h2>Gravis Safety Boot</h2>
+      <img src="https://images.unsplash.com/photo-1552062407-5585ab34d3d0?w=500&q=80" alt="Alligator Safety Boot" onerror="this.src='https://via.placeholder.com/500x300?text=Image+Unavailable'">
+      <h2>Alligator Safety Boot</h2>
       <p>Heavy-duty boot with zipper closure and reflective accents for visibility.</p>
     </div>
     <div class="product">
-      <img src="https://images.unsplash.com/photo-1543163521-9a539c45dd15?w=500&q=80" alt="Modern Work Boot">
+      <img src="https://images.unsplash.com/photo-1543163521-9a539c45dd15?w=500&q=80" alt="Modern Work Boot" onerror="this.src='https://via.placeholder.com/500x300?text=Image+Unavailable'">
       <h2>Modern Work Boot</h2>
       <p>Stylish, functional boot with speckled rugged sole and protective design.</p>
     </div>
@@ -64,7 +65,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>© 2024 Gravis Safety Footwear Pty (Ltd)</p>
+    <p>© 2024 Alligator Safety Boots Pty (Ltd)</p>
     <p>📞 +(27)78 317 1060 | ✉️ kaelacliff425@gmail.com</p>
   </footer>
 

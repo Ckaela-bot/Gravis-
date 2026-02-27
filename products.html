@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Products – Gravis Safety Footwear</title>
+  <title>Products – Alligator Safety Boots</title>
   <link rel="stylesheet" href="assets/css/style.css"/>
 </head>
 <body>
   <header class="site-header">
     <div class="header-left">
-      <div class="logo">Gravis Safety Footwear</div>
+      <div class="logo">Alligator Safety Boots</div>
       <div class="tagline">Premium Protection, Professional Pride</div>
     </div>
     <div class="nav-toggle" onclick="toggleNav()">✖</div>
@@ -25,6 +25,7 @@
     <div class="cta">
       <button class="glow-btn" onclick="shopNow()">Shop Now</button>
       <button class="glow-btn" onclick="requestQuote()">Request Quote</button>
+      <button id="theme-toggle" class="glow-btn" onclick="toggleTheme()">🌙 Dark</button>
     </div>
   </header>
 
@@ -33,7 +34,7 @@
       <h1>Our Products</h1>
       <div class="product-grid">
         <div class="product-card glow-card">
-          <img src="https://images.unsplash.com/photo-1606107557529-da4dd22537cd?w=500&q=80" alt="Winter Safety Boot"/>
+          <img src="https://images.unsplash.com/photo-1606107557529-da4dd22537cd?w=500&q=80" alt="Winter Safety Boot" onerror="this.src='https://via.placeholder.com/500x300?text=Image+Unavailable'"/>
           <h3>Winter Safety Boot</h3>
           <span class="price">R950 – R1,200</span>
           <div class="size-selector">
@@ -50,10 +51,11 @@
               <button class="size-option" onclick="selectSize(this)">12</button>
             </div>
           </div>
-          <button class="glow-btn" onclick="addToCart('Winter Safety Boot', 950)">Add to Cart</button>
+          <button class="glow-btn" onclick="addToCart(event,'Winter Safety Boot', 950)">Add to Cart</button>
+          <button class="glow-btn" onclick="addToWishlist('Winter Safety Boot')">🤍 Wishlist</button>
         </div>
         <div class="product-card glow-card">
-          <img src="https://images.unsplash.com/photo-1608256496014-e2d359c24ec0?w=500&q=80" alt="Steel Toe Safety Boot"/>
+          <img src="https://images.unsplash.com/photo-1608256496014-e2d359c24ec0?w=500&q=80" alt="Steel Toe Safety Boot" onerror="this.src='https://via.placeholder.com/500x300?text=Image+Unavailable'"/>
           <h3>Steel Toe Safety Boot</h3>
           <span class="price">R1,100 – R1,400</span>
           <div class="size-selector">
@@ -70,10 +72,11 @@
               <button class="size-option" onclick="selectSize(this)">12</button>
             </div>
           </div>
-          <button class="glow-btn" onclick="addToCart('Steel Toe Safety Boot', 1100)">Add to Cart</button>
+          <button class="glow-btn" onclick="addToCart(event,'Steel Toe Safety Boot', 1100)">Add to Cart</button>
+          <button class="glow-btn" onclick="addToWishlist('Steel Toe Safety Boot')">🤍 Wishlist</button>
         </div>
         <div class="product-card glow-card">
-          <img src="https://images.unsplash.com/photo-1551028719-00167b16ebc5?w=500&q=80" alt="Professional Work Boot"/>
+          <img src="https://images.unsplash.com/photo-1551028719-00167b16ebc5?w=500&q=80" alt="Professional Work Boot" onerror="this.src='https://via.placeholder.com/500x300?text=Image+Unavailable'"/>
           <h3>Professional Work Boot</h3>
           <span class="price">R850 – R1,050</span>
           <div class="size-selector">
@@ -90,10 +93,11 @@
               <button class="size-option" onclick="selectSize(this)">12</button>
             </div>
           </div>
-          <button class="glow-btn" onclick="addToCart('Professional Work Boot', 850)">Add to Cart</button>
+          <button class="glow-btn" onclick="addToCart(event,'Professional Work Boot', 850)">Add to Cart</button>
+          <button class="glow-btn" onclick="addToWishlist('Professional Work Boot')">🤍 Wishlist</button>
         </div>
         <div class="product-card glow-card">
-          <img src="https://images.unsplash.com/photo-1537048191336-612213a8f953?w=500&q=80" alt="Heavy Duty Industrial Boot"/>
+          <img src="https://images.unsplash.com/photo-1537048191336-612213a8f953?w=500&q=80" alt="Heavy Duty Industrial Boot" onerror="this.src='https://via.placeholder.com/500x300?text=Image+Unavailable'"/>
           <h3>Heavy Duty Industrial Boot</h3>
           <span class="price">R1,300 – R1,600</span>
           <div class="size-selector">
@@ -110,13 +114,14 @@
               <button class="size-option" onclick="selectSize(this)">12</button>
             </div>
           </div>
-          <button class="glow-btn" onclick="addToCart('Heavy Duty Industrial Boot', 1300)">Add to Cart</button>
+          <button class="glow-btn" onclick="addToCart(event,'Heavy Duty Industrial Boot', 1300)">Add to Cart</button>
+          <button class="glow-btn" onclick="addToWishlist('Heavy Duty Industrial Boot')">🤍 Wishlist</button>
         </div>
       </div>
     </div>
   </section>
 
-  <footer>© 2024 Gravis Safety Footwear</footer>
+  <footer>© 2024 Alligator Safety Boots</footer>
   <button id="back-to-top" class="glow-btn">↑ Back to Top</button>
   <script src="assets/js/script.js"></script>
 </body>

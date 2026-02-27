@@ -1,22 +1,22 @@
-# Gravis Safety Footwear
+# Alligator Safety Boots
 
-A modern, professional e-commerce website for Gravis Safety Footwear - premium safety boots designed for protection, comfort, and style.
+A modern, professional e-commerce website for Alligator Safety Boots - premium safety boots designed for protection, comfort, and style.
 
 ## Project Overview
 
-Gravis Safety Footwear is a fully functional static website built with HTML5, CSS3, and vanilla JavaScript. The site features:
+Alligator Safety Boots is a fully functional static website built with HTML5, CSS3, and vanilla JavaScript. The site features:
 
 - **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
 - **Professional UI**: Clean white background with green accent colors
-- **E-Commerce Functionality**: Shopping cart system with product management
-- **Interactive Elements**: Dynamic FAQ accordion, product filtering, and checkout modal
+- **E-Commerce Functionality**: Shopping cart system with product management, wishlist support
+- **Interactive Elements**: Dynamic FAQ accordion, product filtering, checkout modal, theme toggle with dark mode
 - **Optimized Performance**: Lightweight codebase with fast load times
 - **SEO Ready**: Proper HTML structure with semantic markup
 
 ## Directory Structure
 
 ```
-Gravis-/
+Alligator-/
 ├── index.html                 # Home/Landing page
 ├── products.html              # Product catalog
 ├── about.html                 # About Us & company story
@@ -38,7 +38,7 @@ Gravis-/
 ### Pages
 
 1. **Home (index.html)** - Hero section with product showcase and CTA buttons
-2. **Products (products.html)** - Product grid with 4 safety boot options
+2. **Products (products.html)** - Product grid with 4 safety boot options (each item can be added to a wishlist)
 3. **About (about.html)** - Company story, founder info, mission & vision
 4. **FAQ (faq.html)** - 5 interactive FAQ items with accordion functionality
 5. **Blog (blog.html)** - News and updates with blog card grid
@@ -48,10 +48,10 @@ Gravis-/
 ### Core Functionality
 
 - **Shopping Cart**: Add/remove products, real-time total calculation
-- **Notifications**: Visual feedback when items are added to cart
+- **Notifications**: Visual feedback when items are added to cart or wishlist
 - **Checkout Modal**: Secure payment interface
 - **FAQ Accordion**: Click-to-expand question/answer pairs
-- **Responsive Navigation**: Mobile-friendly hamburger menu
+- **Responsive Navigation**: Mobile-friendly hamburger menu with theme toggle button
 - **Product Images**: Professional images from Unsplash
 
 ## Tech Stack
@@ -65,10 +65,10 @@ Gravis-/
 
 ### Local Development
 
-1. Clone the repository:
+1. Clone the repository (or fork your own GitHub account):
 ```bash
-git clone https://github.com/Ckaela-bot/Gravis-.git
-cd Gravis-
+git clone https://github.com/Ckaela-bot/Alligator-.git
+cd Alligator-
 ```
 
 2. Open `index.html` in your browser or use a local server:
@@ -89,7 +89,7 @@ npx http-server
 1. Ensure the repository is set to public
 2. Go to Settings → Pages
 3. Select `main` branch as source
-4. Your site will be available at: `https://Ckaela-bot.github.io/Gravis-/`
+4. Your site will be available at: `https://Ckaela-bot.github.io/Alligator-/`
 
 ### For Other Hosting (Netlify, Vercel, etc.)
 
@@ -114,13 +114,14 @@ npx http-server
 
 ## Contact Information
 
-**Gravis Safety Footwear**
+**Alligator Safety Boots**
+- GitHub: [Ckaela-bot](https://github.com/Ckaela-bot)
 - Email: kaelacliff425@gmail.com
 - Phone: +(27)78 317 1060
 
 ## License
 
-This project is proprietary and confidential. All rights reserved to Gravis Safety Footwear Pty (Ltd).
+This project is proprietary and confidential. All rights reserved to Alligator Safety Boots Pty (Ltd).
 
 ## Version History
 
@@ -129,6 +130,21 @@ This project is proprietary and confidential. All rights reserved to Gravis Safe
   - Shopping cart functionality
   - Responsive design
   - Professional styling
+
+
+
+## Future Enhancements
+
+Some unique feature ideas you might explore next:
+
+- **User Accounts & Login**: Save carts/wishlists across sessions, enable order history.
+- **Product Reviews & Ratings**: Allow customers to leave feedback with stars and comments.
+- **Advanced Filtering**: Filter products by size, price range, certification, or material.
+- **Size Guide Modal**: Show measurement conversion charts or AR try-on suggestions.
+- **Currency Switcher**: Display prices in multiple currencies based on user location.
+- **Live Chat Support**: Integrate a chat widget or chatbot for real‑time assistance.
+- **Service Worker & Offline Mode**: Cache assets so the site works without connectivity.
+- **Push Notifications**: Notify users about restocks or promotions (via browser API).
 
 ---
 

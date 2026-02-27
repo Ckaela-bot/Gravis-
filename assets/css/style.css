@@ -1,11 +1,80 @@
 /* Base */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #2c3e50;
+  --header-bg: linear-gradient(135deg, #ffffff 0%, #f5f7f5 100%);
+  --accent-color: #1B5E20;
+  --accent-light: rgba(27,94,32,0.1);
+  --btn-bg: linear-gradient(135deg, #1B5E20, #2E7D32);
+  --btn-hover-bg: linear-gradient(135deg, #2E7D32, #43A047);
+  --card-bg: #ffffff;
+  --footer-bg: #2c3e50;
+  --footer-text: #ecf0f1;
+}
+
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  background: #ffffff;
-  color: #2c3e50;
+  background: var(--bg-color);
+  color: var(--text-color);
   line-height: 1.6;
 }
+
+/* Dark mode overrides */
+body.dark, body[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --header-bg: #1e1e1e;
+  --accent-color: #8bc34a;
+  --accent-light: rgba(27,94,32,0.25);
+  --btn-bg: linear-gradient(135deg, #8bc34a, #7cb342);
+  --btn-hover-bg: linear-gradient(135deg, #7cb342, #cddc39);
+  --card-bg: #1e1e1e;
+  --footer-bg: #111;
+  --footer-text: #bbb;
+}
+
+/* smoother transitions */
+body, .site-header, .section-container, .product-card, .blog-card, footer {
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* dark nav link colors */
+body.dark #nav-menu a,
+body[data-theme="dark"] #nav-menu a {
+  color: var(--text-color);
+}
+body.dark #nav-menu a:hover,
+body[data-theme="dark"] #nav-menu a:hover {
+  color: var(--accent-color);
+  background: rgba(139,195,74,0.1);
+}
+
+/* dark page-bg gradient effect */
+body.dark .page-bg, body[data-theme="dark"] .page-bg {
+  background: radial-gradient(circle at top left, #1a1a1a 0%, #121212 100%);
+}
+
+/* dark card shadow for depth */
+body.dark .section-container,
+body[data-theme="dark"] .section-container {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.8);
+}
+body.dark .product-card,
+body[data-theme="dark"] .product-card,
+body.dark .blog-card,
+body[data-theme="dark"] .blog-card {
+  background: #1a1a1a;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
+/* adjust notification style in dark mode */
+body.dark .notification,
+body[data-theme="dark"] .notification {
+  background: linear-gradient(135deg, #689f38, #558b2f);
+}
+
+
 
 /* Image Styles */
 img {
@@ -119,12 +188,12 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(135deg, #ffffff 0%, #f5f7f5 100%);
+  background: var(--header-bg);
   padding: 8px 40px;
   position: relative;
   z-index: 100;
   box-shadow: 0 2px 8px rgba(27,94,32,0.08);
-  border-bottom: 2px solid #1B5E20;
+  border-bottom: 2px solid var(--accent-color);
   min-height: auto;
 }
 
@@ -139,7 +208,7 @@ img {
 .logo {
   font-size: 1.8em;
   font-weight: 800;
-  color: #1B5E20;
+  color: var(--accent-color);
   letter-spacing: 1px;
   margin: 0;
   line-height: 1.1;
@@ -173,7 +242,7 @@ img {
   gap: 18px;
 }
 #nav-menu a {
-  color: #2c3e50;
+  color: var(--text-color);
   text-decoration: none;
   font-weight: 600;
   padding: 5px 10px;
@@ -182,7 +251,7 @@ img {
   font-size: 0.9em;
 }
 #nav-menu a:hover {
-  color: #1B5E20;
+  color: var(--accent-color);
   background: rgba(27,94,32,0.08);
   box-shadow: 0 0 6px rgba(27,94,32,0.15);
 }
@@ -190,7 +259,7 @@ img {
 
 /* Glow buttons */
 .glow-btn {
-  background: linear-gradient(135deg, #1B5E20, #2E7D32);
+  background: var(--btn-bg);
   color: #fff;
   border: none;
   padding: 8px 16px;
@@ -202,11 +271,11 @@ img {
   font-size: 0.9em;
 }
 .glow-btn:hover {
-  background: linear-gradient(135deg, #2E7D32, #43A047);
+  background: var(--btn-hover-bg);
   box-shadow: 0 3px 12px rgba(27,94,32,0.3);
 }
 .glow-btn:hover {
-  background: linear-gradient(135deg, #2E7D32, #43A047);
+  background: var(--btn-hover-bg);
   box-shadow: 0 0 25px rgba(27,94,32,1), 0 0 40px rgba(255,255,255,0.3);
 }
 
@@ -648,3 +717,35 @@ footer {
     width: 100%;
   }
 }
+
+/* Dark-mode overrides for components */
+body.dark .page-bg,
+body[data-theme="dark"] .page-bg {
+  background: #181818;
+}
+body.dark .section-container,
+body[data-theme="dark"] .section-container {
+  background: rgba(30,30,30,0.95);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  border: 1px solid rgba(27,94,32,0.3);
+}
+body.dark .product-card,
+body[data-theme="dark"] .product-card {
+  background: var(--card-bg);
+}
+body.dark footer,
+body[data-theme="dark"] footer {
+  background: var(--footer-bg);
+  color: var(--footer-text);
+}
+body.dark .cart-item,
+body[data-theme="dark"] .cart-item {
+  background: #2a2a2a;
+}
+body.dark .contact-form,
+body[data-theme="dark"] .contact-form,
+body.dark .glow-form,
+body[data-theme="dark"] .glow-form {
+  background: #252525;
+}
+

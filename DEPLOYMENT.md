@@ -12,7 +12,7 @@
 
 ### Code Quality
 - [x] All HTML files reference correct asset paths
-- [x] Full "Gravis Safety Footwear" branding restored across all pages
+- [x] Full "Alligator Safety Boots" branding restored across all pages
 - [x] Header changed from sticky to scrollable
 - [x] Responsive design verified
 - [x] All images use external CDN (Unsplash)
@@ -21,6 +21,8 @@
 ### Functionality
 - [x] Shopping cart working correctly
 - [x] Add to cart button functional with notifications
+- [x] Wishlist button with notification
+- [x] Dark mode / theme toggle implemented
 - [x] Checkout modal operational
 - [x] FAQ accordion interactive
 - [x] Contact form styled correctly
@@ -44,7 +46,7 @@
    - Save
 
 2. **Verify Deployment:**
-   - Your site will be available at: `https://Ckaela-bot.github.io/Gravis-/`
+   - Your site will be available at: `https://Ckaela-bot.github.io/Alligator-/`
    - Wait 1-2 minutes for initial deployment
    - Check Actions tab for deployment status
 
