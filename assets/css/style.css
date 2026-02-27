@@ -1,8 +1,22 @@
-/* Base */
+/* Base - dark theme is default */
 :root {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --header-bg: #1e1e1e;
+  --accent-color: #8bc34a;
+  --accent-light: rgba(27,94,32,0.25);
+  --btn-bg: linear-gradient(135deg, #8bc34a, #7cb342);
+  --btn-hover-bg: linear-gradient(135deg, #7cb342, #cddc39);
+  --card-bg: #1e1e1e;
+  --footer-bg: #111;
+  --footer-text: #bbb;
+}
+
+/* Light theme overrides */
+body.light, body[data-theme="light"] {
   --bg-color: #ffffff;
   --text-color: #2c3e50;
-  --header-bg: linear-gradient(135deg, #ffffff 0%, #f5f7f5 100%);
+  --header-bg: linear-gradient(135deg, #e8f5e9 0%, #f5f7f5 100%);
   --accent-color: #1B5E20;
   --accent-light: rgba(27,94,32,0.1);
   --btn-bg: linear-gradient(135deg, #1B5E20, #2E7D32);
@@ -20,19 +34,7 @@ body {
   line-height: 1.6;
 }
 
-/* Dark mode overrides */
-body.dark, body[data-theme="dark"] {
-  --bg-color: #121212;
-  --text-color: #e0e0e0;
-  --header-bg: #1e1e1e;
-  --accent-color: #8bc34a;
-  --accent-light: rgba(27,94,32,0.25);
-  --btn-bg: linear-gradient(135deg, #8bc34a, #7cb342);
-  --btn-hover-bg: linear-gradient(135deg, #7cb342, #cddc39);
-  --card-bg: #1e1e1e;
-  --footer-bg: #111;
-  --footer-text: #bbb;
-}
+/* Dark-mode styles now encompassed by root default, explicit dark class not needed */
 
 /* smoother transitions */
 body, .site-header, .section-container, .product-card, .blog-card, footer {
@@ -240,7 +242,12 @@ img {
 #nav-menu {
   display: flex;
   gap: 18px;
+  background: var(--header-bg);
 }
+#nav-menu.active {
+  background: var(--header-bg);
+}
+
 #nav-menu a {
   color: var(--text-color);
   text-decoration: none;
@@ -249,10 +256,12 @@ img {
   border-radius: 4px;
   transition: all 0.3s ease;
   font-size: 0.9em;
+  background: transparent;
 }
+
 #nav-menu a:hover {
   color: var(--accent-color);
-  background: rgba(27,94,32,0.08);
+  background: var(--accent-light);
   box-shadow: 0 0 6px rgba(27,94,32,0.15);
 }
 .cta { display: flex; gap: 8px; align-items: center; }
@@ -685,14 +694,14 @@ footer {
   .tagline {
     font-size: 0.65em;
   }
-  .nav-toggle { display: block; }
+  .nav-toggle { display: block; color: var(--accent-color); }
   #nav-menu {
     display: none;
     flex-direction: column;
     width: 100%;
-    background: #ffffff;
+    background: var(--header-bg);
     padding: 15px;
-    border-top: 2px solid #1B5E20;
+    border-top: 2px solid var(--accent-color);
     gap: 8px;
   }
   #nav-menu.active {
@@ -700,9 +709,13 @@ footer {
   }
   #nav-menu a { 
     margin: 5px 0; 
-    color: #2c3e50;
+    color: var(--text-color);
     padding: 8px 10px;
     font-size: 0.8em;
+    background: transparent;
+  }
+  #nav-menu a:hover {
+    background: rgba(27,94,32,0.1);
   }
   .cta { 
     display: none;

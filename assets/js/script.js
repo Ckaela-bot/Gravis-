@@ -18,28 +18,39 @@ const THEME_KEY = 'alligator_theme';
 function applySavedTheme() {
   const saved = localStorage.getItem(THEME_KEY);
   const btn = document.getElementById('theme-toggle');
-  const darkPreferred = saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches);
-  if (darkPreferred) {
+  let useDark = true; // dark default
+  if (saved) {
+    useDark = saved === 'dark';
+  }
+  if (useDark) {
+    document.body.classList.remove('light');
     document.body.classList.add('dark');
     document.body.setAttribute('data-theme','dark');
     if (btn) btn.textContent = '☀️ Light';
   } else {
+    document.body.classList.remove('dark');
+    document.body.classList.add('light');
+    document.body.setAttribute('data-theme','light');
     if (btn) btn.textContent = '🌙 Dark';
   }
 }
 
 function toggleTheme() {
   const body = document.body;
-  const isDark = body.classList.toggle('dark');
   const btn = document.getElementById('theme-toggle');
-  if (isDark) {
+  if (body.classList.contains('dark')) {
+    body.classList.remove('dark');
+    body.classList.add('light');
+    body.setAttribute('data-theme','light');
+    if (btn) btn.textContent = '🌙 Dark';
+    localStorage.setItem(THEME_KEY, 'light');
+  } else {
+    body.classList.remove('light');
+    body.classList.add('dark');
     body.setAttribute('data-theme','dark');
     if (btn) btn.textContent = '☀️ Light';
-  } else {
-    body.removeAttribute('data-theme');
-    if (btn) btn.textContent = '🌙 Dark';
+    localStorage.setItem(THEME_KEY, 'dark');
   }
-  localStorage.setItem(THEME_KEY, isDark ? 'dark' : 'light');
 }
 
 function addToCart(e, productName, price) {
