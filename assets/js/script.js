@@ -14,6 +14,8 @@ function toggleNav() {
 let cart = [];
 let wishlist = [];
 const THEME_KEY = 'alligator_theme';
+const CART_KEY = 'alligator_cart';
+const WISHLIST_KEY = 'alligator_wishlist';
 
 function applySavedTheme() {
   const saved = localStorage.getItem(THEME_KEY);
@@ -54,19 +56,23 @@ function toggleTheme() {
 }
 
 function addToCart(e, productName, price) {
-  // Check if a size was selected
+  // require size selection if size buttons exist
   const sizeButton = e.target.parentElement.parentElement.querySelector('.size-option.selected');
-  const selectedSize = sizeButton ? `UK ${sizeButton.textContent}` : 'No size selected';
-  
+  if (!sizeButton && e.target.parentElement.parentElement.querySelector('.size-selector')) {
+    showNotification('❗ Please select a size before adding to cart');
+    return;
+  }
+  const selectedSize = sizeButton ? `UK ${sizeButton.textContent}` : '';
   const cartItem = {
     name: productName,
     price: price,
     size: selectedSize
   };
-  
   cart.push(cartItem);
-  showNotification(`✓ ${productName} (${selectedSize}) added to cart!`);
+  saveCart();
+  showNotification(`✓ ${productName}${selectedSize ? ' ('+selectedSize+')' : ''} added to cart!`);
   updateCartDisplay();
+  updateCartCount();
   // Auto-show cart after 2 seconds
   setTimeout(() => {
     if (confirm(`${productName} added! View your cart?`)) {
@@ -77,7 +83,32 @@ function addToCart(e, productName, price) {
 
 function addToWishlist(productName) {
   wishlist.push(productName);
+  saveWishlist();
   showNotification(`❤️ ${productName} added to wishlist!`);
+}
+
+function saveCart() {
+  localStorage.setItem(CART_KEY, JSON.stringify(cart));
+}
+
+function saveWishlist() {
+  localStorage.setItem(WISHLIST_KEY, JSON.stringify(wishlist));
+}
+
+function loadData() {
+  const storedCart = localStorage.getItem(CART_KEY);
+  if (storedCart) {
+    try { cart = JSON.parse(storedCart); } catch {};
+  }
+  const storedWishlist = localStorage.getItem(WISHLIST_KEY);
+  if (storedWishlist) {
+    try { wishlist = JSON.parse(storedWishlist); } catch {};
+  }
+}
+
+function updateCartCount() {
+  const span = document.getElementById('cart-count');
+  if (span) span.textContent = cart.length;
 }
 
 function showNotification(message) {
@@ -105,7 +136,9 @@ function updateCartDisplay() {
 
 function removeFromCart(index) {
   cart.splice(index, 1);
+  saveCart();
   updateCartDisplay();
+  updateCartCount();
 }
 
 // =======================
@@ -143,6 +176,11 @@ function closeCheckout() {
 document.addEventListener("DOMContentLoaded", () => {
   // apply stored theme preference
   applySavedTheme();
+  // restore cart/wishlist from localStorage
+  loadData();
+  updateCartDisplay();
+  updateCartCount();
+
   // Checkout form
   const checkoutForm = document.getElementById("checkout-form");
   if (checkoutForm) {
@@ -151,7 +189,9 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("Payment successful! Thank you for shopping with Alligator Safety Boots.");
       closeCheckout();
       cart = [];
+      saveCart();
       updateCartDisplay();
+      updateCartCount();
     });
   }
 
