@@ -199,8 +199,18 @@ img {
   border-bottom: 2px solid var(--accent-color);
   backdrop-filter: blur(8px);
   min-height: auto;
+  transition: padding 0.3s ease, background 0.3s ease;
 }
 
+/* shrink on scroll */
+.site-header.shrink {
+  padding: 6px 40px;
+  box-shadow: 0 2px 12px rgba(27,94,32,0.3);
+}
+
+.site-header.shrink .logo {
+  font-size: 1.6em;
+}
 .site-header .logo {
   font-size: 2.2em;
   transition: transform 0.3s ease;

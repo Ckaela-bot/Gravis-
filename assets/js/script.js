@@ -181,6 +181,13 @@ document.addEventListener("DOMContentLoaded", () => {
   updateCartDisplay();
   updateCartCount();
 
+  // shrink header on scroll
+  const header = document.querySelector('.site-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) header.classList.add('shrink');
+    else header.classList.remove('shrink');
+  });
+
   // Checkout form
   const checkoutForm = document.getElementById("checkout-form");
   if (checkoutForm) {
