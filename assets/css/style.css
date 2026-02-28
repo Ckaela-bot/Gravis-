@@ -211,6 +211,22 @@ img {
 .site-header.shrink .logo {
   font-size: 1.6em;
 }
+
+/* hide header when scrolling down */
+.site-header.hidden {
+  transform: translateY(-100%);
+}
+
+/* cart count animation */
+@keyframes bounce {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.4); }
+}
+
+#cart-count.bounce {
+  animation: bounce 0.5s ease;
+}
+
 .site-header .logo {
   font-size: 2.2em;
   transition: transform 0.3s ease;

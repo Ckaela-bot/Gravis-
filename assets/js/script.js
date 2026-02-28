@@ -72,7 +72,7 @@ function addToCart(e, productName, price) {
   saveCart();
   showNotification(`✓ ${productName}${selectedSize ? ' ('+selectedSize+')' : ''} added to cart!`);
   updateCartDisplay();
-  updateCartCount();
+  updateCartCount(true);
   // Auto-show cart after 2 seconds
   setTimeout(() => {
     if (confirm(`${productName} added! View your cart?`)) {
@@ -106,9 +106,15 @@ function loadData() {
   }
 }
 
-function updateCartCount() {
+function updateCartCount(animate=false) {
   const span = document.getElementById('cart-count');
-  if (span) span.textContent = cart.length;
+  if (span) {
+    span.textContent = cart.length;
+    if (animate) {
+      span.classList.add('bounce');
+      setTimeout(() => span.classList.remove('bounce'), 600);
+    }
+  }
 }
 
 function showNotification(message) {
@@ -181,11 +187,21 @@ document.addEventListener("DOMContentLoaded", () => {
   updateCartDisplay();
   updateCartCount();
 
-  // shrink header on scroll
+  // shrink header and hide/show based on direction
   const header = document.querySelector('.site-header');
+  let lastScroll = window.scrollY;
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) header.classList.add('shrink');
+    const current = window.scrollY;
+    if (current > 50) header.classList.add('shrink');
     else header.classList.remove('shrink');
+
+    if (current > lastScroll && current > 100) {
+      // scrolling down
+      header.classList.add('hidden');
+    } else {
+      header.classList.remove('hidden');
+    }
+    lastScroll = current;
   });
 
   // Checkout form

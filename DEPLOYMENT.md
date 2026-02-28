@@ -14,6 +14,7 @@
 - [x] All HTML files reference correct asset paths
 - [x] Full "Alligator Safety Boots" branding restored across all pages
 - [x] Header restyled with sticky backdrop blur and animated logo
+- [x] Header hides when scrolling down and shrinks when scrolling up
 - [x] Header changed from sticky to scrollable
 - [x] Responsive design verified
 - [x] All images use external CDN (Unsplash)
